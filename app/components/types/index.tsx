@@ -120,6 +120,8 @@ export interface EmptyStateProps {
     showReset ?: boolean;
 }
 
+// listing 
+
 export interface ListingCardProps {
     data : SafeListing;
     reservation ?: Reservation;
@@ -128,4 +130,42 @@ export interface ListingCardProps {
     actionLabel ?: string;
     actionId ?: string;
     currentUser?: SafeUser | null;
+}
+
+export interface ListingHeadProps {
+    title : string;
+    locationValue  :string;
+    imageSrc : string;
+    id : string;
+    currentUser ?: SafeUser | null;
+}
+
+export interface ListingInfoProps {
+    user ?: SafeUser | null;
+    category : {
+        icon : IconType;
+        label : string;
+        description : string;
+    } | undefined;
+    description : string;
+    roomCount : number;
+    guestCount : number;
+    bathroomCount : number;
+    locationValue : string;
+}
+
+export interface ListingCategoryProps {
+    icon : IconType;
+    label : string;
+    description : string;
+}
+
+export interface ListingReservationProps {
+    price : number;
+    dateRange : Range;
+    totalPrice : number;
+    onChangeDate : (value:Range) => void;
+    onSubmit : ()=>void;
+    disabled : boolean;
+    disabledDates : Date[];
 }

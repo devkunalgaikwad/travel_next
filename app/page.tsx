@@ -7,7 +7,9 @@ export default async function Home() {
   const currentUser = await getCurrentUser()
   if(listing.length === 0){
     return(
-      <EmptyState title='No matches found' subtitle='Try to change the filters' showReset/>
+      <div className='pt-24'>
+        <EmptyState title='No matches found' subtitle='Try to change the filters' showReset/>
+      </div>
     )
   }
   return (

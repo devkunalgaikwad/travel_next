@@ -16,7 +16,6 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
-  console.log(listingId);
   
 
   const hasFavorited = useMemo(() => {

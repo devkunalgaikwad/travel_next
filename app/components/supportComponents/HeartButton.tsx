@@ -6,7 +6,6 @@ import useFavorite from '@/app/hooks/useFavorite'
 
 const HeartButton = ({listingId, currentUser}:HeartButtonProps) => {
     const {hasFavorited, toggleFavorite}= useFavorite({listingId, currentUser})
-    console.log(currentUser);
     
   return (
     <div onClick={toggleFavorite} className='relative hover:opacity-80 hover:text-white transition cursor-pointer'>

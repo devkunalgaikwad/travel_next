@@ -21,6 +21,10 @@ import ImageUpload from './Modal/interaction/ImageUpload'
 import EmptyState from './EmptyState'
 import ListingCard from './listing/ListingCard'
 import HeartButton from './supportComponents/HeartButton'
+import ListingHead from './listing/ListingHead'
+import ListingInfo from './listing/ListingInfo'
+import ListingCategory from './listing/ListingCategory'
+import ListingReservation from './listing/ListingReservation'
 
 
-export {Navbar, Container, Logo, Search, UserMenu, Avatar, MenuItem, Modal, Button, Heading, Input, LoginModal, ResigsterModal, Categories,CategoriesBox, CategoryInput, CountrySelect, Map, Counter, ImageUpload, EmptyState, ListingCard, HeartButton}
+export {Navbar, Container, Logo, Search, UserMenu, Avatar, MenuItem, Modal, Button, Heading, Input, LoginModal, ResigsterModal, Categories,CategoriesBox, CategoryInput, CountrySelect, Map, Counter, ImageUpload, EmptyState, ListingCard, HeartButton, ListingHead, ListingInfo, ListingCategory, ListingReservation}
