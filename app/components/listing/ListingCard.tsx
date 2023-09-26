@@ -6,9 +6,9 @@ import { useRouter } from 'next/navigation'
 import useCountries from '@/app/hooks/useCountry'
 import second, { format } from 'date-fns'
 import Image from 'next/image'
-import { HeartButton } from '..'
+import { Button, HeartButton } from '..'
 
-const ListingCard = ({data, reservation, onAction, actionId='', disabled, currentUser}:ListingCardProps) => {
+const ListingCard = ({data, reservation, onAction, actionId='', disabled, currentUser,actionLabel}:ListingCardProps) => {
     const router = useRouter()
     const {getByValue} = useCountries()
     const location = getByValue(data.locationValue)
@@ -43,6 +43,25 @@ const ListingCard = ({data, reservation, onAction, actionId='', disabled, curren
                     <HeartButton listingId ={data.id} currentUser={currentUser}/>
                 </div>
             </div>
+            <div className='font-semibold text-lg'>
+                {location?.region}, {location?.label}
+            </div>
+            <div className='font-semibold text-lg'>
+                {reservationDate || data.category}
+            </div>
+            <div className='flex flex-row items-center gap-1'>
+                <div className='font-semibold'>
+                    $ {price}
+                </div>
+                {!reservation && (
+                    <div className='font-light'>
+                        Night
+                    </div>
+                )}
+            </div>
+            {onAction && actionLabel && (
+                <Button disabled={disabled} small label={actionLabel} onClick={handleCancel}/>
+            )}
         </div>
     </div>
   )

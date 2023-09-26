@@ -34,5 +34,3 @@ export default async function RootLayout({
     </html>
   )
 }
-
-// 6.31

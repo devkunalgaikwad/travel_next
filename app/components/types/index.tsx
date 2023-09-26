@@ -2,8 +2,9 @@
 
 import { IconType } from "react-icons";
 import {FieldValues, FieldErrors, UseFormRegister} from 'react-hook-form'
-import { SafeListing, SafeUser } from "@/app/types";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { Listing, Reservation } from "@prisma/client";
+import { RangeKeyDict , Range} from "react-date-range";
 
 export interface NavbarProps {
     currentUser?: SafeUser | null;
@@ -112,6 +113,11 @@ export interface ImageUploadProps {
     value : string;
 }
 
+export interface CalendarProps {
+    value : Range;
+    onChange : (value : RangeKeyDict) => void;
+    disableDates?:Date[];
+}
 // main section
 
 export interface EmptyStateProps {
@@ -124,7 +130,7 @@ export interface EmptyStateProps {
 
 export interface ListingCardProps {
     data : SafeListing;
-    reservation ?: Reservation;
+    reservation ?: SafeReservation;
     onAction ?:(id:string)=>void;
     disabled?: boolean;
     actionLabel ?: string;
@@ -161,11 +167,12 @@ export interface ListingCategoryProps {
 }
 
 export interface ListingReservationProps {
-    price : number;
-    dateRange : Range;
-    totalPrice : number;
-    onChangeDate : (value:Range) => void;
-    onSubmit : ()=>void;
-    disabled : boolean;
-    disabledDates : Date[];
+    price: number;
+    dateRange: Range;
+    totalPrice: number;
+    onChangeDate: (value: Range) => void;
+    onSubmit: () => void;
+    disabled?: boolean;
+    disabledDates: Date[];
+
 }

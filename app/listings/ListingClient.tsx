@@ -9,6 +9,7 @@ import {useRouter} from 'next/navigation'
 import {differenceInCalendarDays, eachDayOfInterval} from 'date-fns'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { Range } from 'react-date-range'
 
 const initialDateRange ={
   startDate : new Date(),
@@ -35,7 +36,7 @@ const ListingClient = ({currentUser, listing, reservation = []}:ListenClientProp
   },[reservation])
   const [isLoading, setIsLoading] = useState(false)
   const [totalPrice, setTotalPrice] = useState(listing.price)
-  const [dateRange, setDateRange] = useState(initialDateRange)
+  const [dateRange, setDateRange] = useState<Range>(initialDateRange)
   const onCreateReservation = useCallback(()=>{
     if (!currentUser){
       return loginModal.onOpen()
@@ -44,7 +45,7 @@ const ListingClient = ({currentUser, listing, reservation = []}:ListenClientProp
     axios.post('/api/reservations',{totalPrice,startDate : dateRange.startDate, endDate : dateRange.endDate, listingId: listing?.id}).then(()=>{
       toast.success('Listing is reserved!')
       setDateRange(initialDateRange)
-      router.refresh()
+      router.push('/trips')
     }).catch(()=>{
       toast.error('Something went wrong')
     }).finally(()=>{
@@ -70,7 +71,7 @@ const ListingClient = ({currentUser, listing, reservation = []}:ListenClientProp
         <div className='grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6'>
           <ListingInfo user={listing.user} category={category} description={listing.description} roomCount={listing.roomCount} guestCount={listing.guestCount} bathroomCount={listing.bathroomCount} locationValue={listing.locationValue}/>
           <div className='order-first md:z-10 md:order-last md:col-span-3'>
-            <ListingReservation/>
+            <ListingReservation price={listing.price} totalPrice={totalPrice} onChangeDate={(value) => setDateRange(value)} dateRange={dateRange} onSubmit={onCreateReservation} disabled={isLoading} disabledDates={disabledDates}/>
           </div>
         </div>
         </div>
