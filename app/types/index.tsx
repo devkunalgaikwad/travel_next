@@ -22,9 +22,21 @@ export interface ListenClientProps {
 }
 
 export interface TripsClientProps {
-  reservations : SafeReservation[];
-  currentUser?: SafeUser | null;
+  reservations: SafeReservation[],
+  currentUser?: SafeUser | null,
 }
+
+export interface ReservationsClientProps{
+  reservations: SafeReservation[],
+  currentUser?: SafeUser | null,
+}
+
+export interface FavoritesClientProps {
+  listings: SafeListing[],
+  currentUser?: SafeUser | null,
+}
+
+
 export type SafeReservation = Omit<Reservation,'createdAt'| 'startDate' | 'endDate'| 'listing'>&{
   createAt : string;
   startDate : string;

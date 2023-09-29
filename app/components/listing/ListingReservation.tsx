@@ -16,7 +16,9 @@ const ListingReservation = ({price, dateRange, totalPrice, onChangeDate, onSubmi
         </div> 
       </div>
       <hr />
-      <Calendar value={dateRange} disableDates={disabledDates} onChange={(value)=> onChangeDate(value.selection)}/>
+      <div className='z-10'>
+        <Calendar value={dateRange} disableDates={disabledDates} onChange={(value)=> onChangeDate(value.selection)}/>
+      </div>
       <div className='p-4'>
         <Button disabled={disabled} label='Reserve' onClick={onSubmit}/>
       </div>
