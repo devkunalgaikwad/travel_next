@@ -3,6 +3,8 @@ import React from 'react'
 import { HeartButtonProps } from '../types'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import useFavorite from '@/app/hooks/useFavorite'
+import ClientOnly from '../ClientOnly'
+
 
 const HeartButton = ({listingId, currentUser}:HeartButtonProps) => {
     const {hasFavorited, toggleFavorite}= useFavorite({listingId, currentUser})

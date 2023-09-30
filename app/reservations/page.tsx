@@ -1,6 +1,6 @@
 import React from 'react'
 import getCurrentUser from '../action/getCurrentUser'
-import { EmptyState } from '../components'
+import { ClientOnly, EmptyState } from '../components'
 import getReservations from '../action/getReservations'
 import ReservationsClient from './ReservationsClient'
 
@@ -15,11 +15,15 @@ const page = async() => {
 
     if (reservations.length ===0){
         return(
-            <EmptyState title='No reservation fond' subtitle='Its look that there is no reservations'/>
+            <ClientOnly>
+                <EmptyState title='No reservation fond' subtitle='Its look that there is no reservations'/>
+            </ClientOnly>
         )
     }
   return (
-    <ReservationsClient reservations={reservations} currentUser={currentUser}/>
+    <ClientOnly>
+        <ReservationsClient reservations={reservations} currentUser={currentUser}/>
+    </ClientOnly>
   )
 }
 

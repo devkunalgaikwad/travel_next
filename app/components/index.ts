@@ -15,7 +15,6 @@ import Categories from './Navbar/Categories'
 import CategoriesBox from './Navbar/CategoriesBox'
 import CategoryInput from './Modal/interaction/CategoryInput'
 import CountrySelect from './Modal/interaction/CountrySelect'
-import Map from './map/Map'
 import Counter from './Modal/interaction/Counter'
 import ImageUpload from './Modal/interaction/ImageUpload'
 import EmptyState from './EmptyState'
@@ -27,6 +26,7 @@ import ListingCategory from './listing/ListingCategory'
 import ListingReservation from './listing/ListingReservation'
 import Calendar from './supportComponents/Calendar'
 import Loader from './Loader'
+import ClientOnly from './ClientOnly'
 
 
-export {Navbar, Container, Logo, Search, UserMenu, Avatar, MenuItem, Modal, Button, Heading, Input, LoginModal, ResigsterModal, Categories,CategoriesBox, CategoryInput, CountrySelect, Map, Counter, ImageUpload, EmptyState, ListingCard, HeartButton, ListingHead, ListingInfo, ListingCategory, ListingReservation, Calendar, Loader}
+export {Navbar, Container, Logo, Search, UserMenu, Avatar, MenuItem, Modal, Button, Heading, Input, LoginModal, ResigsterModal, Categories,CategoriesBox, CategoryInput, CountrySelect, Counter, ImageUpload, EmptyState, ListingCard, HeartButton, ListingHead, ListingInfo, ListingCategory, ListingReservation, Calendar, Loader, ClientOnly}

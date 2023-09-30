@@ -1,6 +1,6 @@
 import React from 'react'
 import getCurrentUser from '../action/getCurrentUser'
-import { EmptyState } from '../components'
+import { ClientOnly, EmptyState } from '../components'
 import getListing from '../action/getListing'
 import PropertiesClient from './PropertiesClient'
 
@@ -20,7 +20,9 @@ const PropertiesPage = async() => {
     }
 
   return (
-    <PropertiesClient listing={listing} currentUser={currentUser} />
+    <ClientOnly>
+        <PropertiesClient listing={listing} currentUser={currentUser} />
+    </ClientOnly>
   )
 }
 

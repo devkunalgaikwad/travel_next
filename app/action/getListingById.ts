@@ -9,6 +9,9 @@ export default async function getListingById(
 ) {
   try {
     const { listingId } = params;
+    if (!listingId) {
+      throw new Error("Listing ID is missing");
+    }
     
     const listing = await prisma.listing.findUnique({
       where: {
@@ -35,6 +38,7 @@ export default async function getListingById(
       }
     };
   } catch (error: any) {
+    console.error("Error fetching listing by ID:", error);
     throw new Error(error);
   }
 }

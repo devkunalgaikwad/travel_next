@@ -37,7 +37,7 @@ export interface PropertiesClientProps {
 }
 
 export interface FavoritesClientProps {
-  listings: SafeListing[],
+  listing: SafeListing[],
   currentUser?: SafeUser | null,
 }
 

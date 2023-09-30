@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
-import { LoginModal, Navbar, ResigsterModal } from './components'
+import { ClientOnly, LoginModal, Navbar, ResigsterModal } from './components'
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './action/getCurrentUser'
 import RentModal from './components/Modal/RentModal'
@@ -23,11 +23,13 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ToasterProvider/>
-        <RentModal/>
-        <ResigsterModal/>
-        <LoginModal/>
-        <SearchModal/>
+        <ClientOnly>
+          <ToasterProvider/>
+          <RentModal/>
+          <ResigsterModal/>
+          <LoginModal/>
+          <SearchModal/>
+        </ClientOnly>
         <Navbar currentUser={currentUser}/>
         <div className='pb-20 pt-28'>
           {children}

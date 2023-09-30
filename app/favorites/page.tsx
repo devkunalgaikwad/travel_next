@@ -1,7 +1,7 @@
 import React from 'react'
 import getFavoriteListing from '../action/getFavoriteListing'
 import getCurrentUser from '../action/getCurrentUser'
-import { EmptyState } from '../components'
+import { ClientOnly, EmptyState } from '../components'
 import FavoritesClient from './FavoritesClient'
 
 const page = async() => {
@@ -13,7 +13,9 @@ const page = async() => {
     )
   }
   return (
-    <FavoritesClient listings={listings} currentUser ={currentUser}/>
+    <ClientOnly>
+      <FavoritesClient listing={listings} currentUser ={currentUser}/>
+    </ClientOnly>
   )
 }
 
