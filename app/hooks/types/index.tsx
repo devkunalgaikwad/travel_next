@@ -12,3 +12,9 @@ export interface useLoginModalProps {
     onOpen : ()=> void;
     onClose : ()=> void;
 }
+
+export interface useSearchModalProps {
+    isOpen : boolean;
+    onOpen : ()=> void;
+    onClose : ()=> void;
+}

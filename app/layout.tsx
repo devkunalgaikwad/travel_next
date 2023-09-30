@@ -5,6 +5,7 @@ import { LoginModal, Navbar, ResigsterModal } from './components'
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './action/getCurrentUser'
 import RentModal from './components/Modal/RentModal'
+import SearchModal from './components/Modal/SearchModal'
 
 const inter = Nunito({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
         <RentModal/>
         <ResigsterModal/>
         <LoginModal/>
+        <SearchModal/>
         <Navbar currentUser={currentUser}/>
         <div className='pb-20 pt-28'>
           {children}
