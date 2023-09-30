@@ -41,7 +41,7 @@ export interface ModalProps{
     body ?: React.ReactElement;
     footer ?: React.ReactElement;
     actionLabel : string;
-    disable : boolean;
+    disable ?: boolean;
     secondaryAction ?: ()=> void ;
     secondaryLabel ?: string;
 }
