@@ -22,8 +22,8 @@ export interface ListenClientProps {
 }
 
 export interface TripsClientProps {
-  listing: SafeListing[],
   currentUser?: SafeUser | null,
+  reservations: SafeReservation[],
 }
 
 export interface ReservationsClientProps{
