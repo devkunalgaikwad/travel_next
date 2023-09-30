@@ -31,6 +31,11 @@ export interface ReservationsClientProps{
   currentUser?: SafeUser | null,
 }
 
+export interface PropertiesClientProps {
+  listing: SafeListing[],
+  currentUser?: SafeUser | null,
+}
+
 export interface FavoritesClientProps {
   listings: SafeListing[],
   currentUser?: SafeUser | null,

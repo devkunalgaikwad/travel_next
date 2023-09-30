@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useCallback, useState } from 'react'
-import { TripsClientProps } from '../types'
+import { PropertiesClientProps } from '../types'
 import { Container, Heading, ListingCard } from '../components'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
-const PropertiesClient = ({currentUser, listing}:TripsClientProps) => {
+const PropertiesClient = ({currentUser, listing}:PropertiesClientProps) => {
     const router = useRouter()
     const [deletingId, setDeletingId] = useState('')
     const onCancel = useCallback((id:string)=>{

@@ -1,7 +1,6 @@
 import React from 'react'
 import getCurrentUser from '../action/getCurrentUser'
 import { EmptyState } from '../components'
-import getReservations from '../action/getReservations'
 import getListing from '../action/getListing'
 import PropertiesClient from './PropertiesClient'
 
