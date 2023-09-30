@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import getCurrentUser from './action/getCurrentUser'
 import getListing, { IListingProps } from './action/getListing'
 import { EmptyState, Container, ListingCard, ClientOnly } from './components'
@@ -5,6 +6,9 @@ import { EmptyState, Container, ListingCard, ClientOnly } from './components'
 interface HomeProps {
   searchParams : IListingProps;
 }
+
+export const dynamic = "force-dynamic" 
+
 export default async function Home({searchParams}:HomeProps) {
   const listing = await getListing(searchParams)
   const currentUser = await getCurrentUser()

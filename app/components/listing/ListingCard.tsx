@@ -38,7 +38,7 @@ const ListingCard = ({data, reservation, onAction, actionId='', disabled, curren
     <div className='col-span-1 cursor-pointer group' onClick={()=>router.push(`/listings/${data.id}`)}>
         <div className='flex flex-col gap-2 w-full'>
             <div className='aspect-square w-full relative overflow-hidden rounded-xl'>
-                <Image alt='Listing' fill src={data.imageSrc} className='object-cover h-full w-full group-hover:scale-110 transition'/>
+                <Image alt='Listing' priority fill src={data.imageSrc} className='object-cover h-full w-full group-hover:scale-110 transition'/>
                 <div className='absolute top-3 right-3'>
                     <HeartButton listingId ={data.id} currentUser={currentUser}/>
                 </div>
