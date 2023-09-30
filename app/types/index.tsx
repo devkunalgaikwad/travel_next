@@ -37,9 +37,13 @@ export interface FavoritesClientProps {
 }
 
 
-export type SafeReservation = Omit<Reservation,'createdAt'| 'startDate' | 'endDate'| 'listing'>&{
-  createAt : string;
-  startDate : string;
-  endDate : string;
-  listing : SafeListing;
-}
+export type SafeReservation = Omit<
+  Reservation, 
+  "createdAt" | "startDate" | "endDate" | "listing"
+> & {
+  createdAt: string;
+  startDate: string;
+  endDate: string;
+  listing: SafeListing;
+};
+
